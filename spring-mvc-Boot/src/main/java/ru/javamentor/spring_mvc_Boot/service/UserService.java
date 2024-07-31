@@ -1,5 +1,4 @@
-package ru.javamentor.spring_mvc_Boot.dao;
-
+package ru.javamentor.spring_mvc_Boot.service;
 
 import ru.javamentor.spring_mvc_Boot.models.User;
 

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.javamentor.spring_mvc_Boot.dao.UserService;
 import ru.javamentor.spring_mvc_Boot.models.User;
+import ru.javamentor.spring_mvc_Boot.service.UserService;
 
 
 @Controller

@@ -4,7 +4,7 @@ package ru.javamentor.spring_mvc_Boot.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "User")
 public class User {
 
     @Id
@@ -49,5 +49,4 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
-
 }
