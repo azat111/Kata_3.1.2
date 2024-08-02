@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.javamentor.spring_mvc_Boot.models.User;
 
 import java.util.List;
@@ -15,20 +16,17 @@ public class UserDAOImp implements UserDAO {
     private EntityManager entityManager;
 
     @Override
-    @Transactional
     public List<User> index() {
         List<User> userlist = entityManager.createQuery("FROM User", User.class).getResultList();
         return userlist;
     }
 
     @Override
-    @Transactional
     public void save(User user) {
         entityManager.persist(user);
     }
 
     @Override
-    @Transactional
     public void delete(int id) {
         User user = entityManager.find(User.class, id);
         if (user != null) {
@@ -43,8 +41,10 @@ public class UserDAOImp implements UserDAO {
     }
 
     @Override
-    @Transactional
-    public void update(User user) {
+    public void update(int id,String name,int age) {
+        User user = findById(id);
+        user.setAge(age);
+        user.setName(name);
         entityManager.merge(user);
     }
 }

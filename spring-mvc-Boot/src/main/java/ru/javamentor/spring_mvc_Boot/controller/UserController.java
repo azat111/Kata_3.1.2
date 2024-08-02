@@ -57,10 +57,7 @@ public class UserController {
 
     @PostMapping("/editUser")
     public String edit(@RequestParam("id") int id, String model, int age) {
-        User user = userService.findById(id);
-        user.setAge(age);
-        user.setName(model);
-        userService.update(user);
+        userService.update(id,model,age);
         return "redirect:/users";
     }
 }

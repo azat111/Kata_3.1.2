@@ -13,5 +13,5 @@ public interface UserService {
 
     User findById(int id);
 
-    void update(User user);
+    void update(int id,String name,int age);
 }
